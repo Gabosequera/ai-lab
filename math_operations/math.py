@@ -157,7 +157,9 @@ def in_range(value, low, high):
         >>> in_range(9, 10, 20)
         False
     """
-    pass  # TODO: Implement this function
+    if (value >= low and value <= high): return True
+    else: return False
+    
 
 
 def greatest_common_factor(a, b):
@@ -179,7 +181,7 @@ def greatest_common_factor(a, b):
         >>> greatest_common_factor(35, 64)
         1
     """
-    pass  # TODO: Implement this function
+    return math.gcd(a, b)
 
 
 def average(numbers):
@@ -201,7 +203,7 @@ def average(numbers):
         >>> average([8, 15, 4, 16, 23, 42])
         18.0
     """
-    pass  # TODO: Implement this function
+    return sum(numbers) / len(numbers)
 
 
 def middle_value(numbers):
@@ -226,7 +228,8 @@ def middle_value(numbers):
 
     Hint: Sort the list into a new variable first, then index into it.
     """
-    pass  # TODO: Implement this function
+    sorted_list = sorted(numbers)
+    return sorted_list[len(sorted_list) // 2]
 
 
 def data_range(numbers):
@@ -247,7 +250,7 @@ def data_range(numbers):
         >>> data_range([7, 7, 7])
         0
     """
-    pass  # TODO: Implement this function
+    return max(numbers) - min(numbers)
 
 
 def binary_to_decimal(bits):
@@ -269,7 +272,7 @@ def binary_to_decimal(bits):
         >>> binary_to_decimal("100000")
         32
     """
-    pass  # TODO: Implement this function
+    return int(bits, 2)
 
 
 # ---------------------------------------------------------------------------
