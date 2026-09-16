@@ -33,7 +33,7 @@ class MarineAnimal:
     def get_description(self):
         """Returns basic marine animal information"""
         # TODO: Return a formatted string with species info
-        return f"{self.species_name}, self.habitat_depth, self.body_length, self.ocean_zone"
+        return f"{self.species_name}, {self.habitat_depth}, {self.body_length}, {self.ocean_zone}"
     
     def calculate_food_needs(self):
         """Base food calculation - 3% of body length in kg per day"""
@@ -112,7 +112,8 @@ class FilterFeeder(MarineAnimal):
     
     def __init__(self, species_name, habitat_depth, body_length, ocean_zone, filter_capacity):
         # TODO: Call parent constructor and initialize filter_capacity
-        pass
+        super().__init__(self, species_name, habitat_depth, body_length, ocean_zone)
+        self.filter_capacity = filter_capacity
     
     def calculate_food_needs(self):
         """Filter feeders need 1% of body length plus filter efficiency bonus"""
