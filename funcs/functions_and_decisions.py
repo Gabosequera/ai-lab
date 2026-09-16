@@ -32,7 +32,8 @@ def diy_greet_twice(name):
     Hi, Ava
     Hi, Ava
     """
-    pass
+    print(f"Hi, {name}")
+    print(f"Hi, {name}")
 
 
 # =============================================================================
@@ -56,7 +57,7 @@ def diy_square(n):
     >>> diy_square(4)
     16
     """
-    pass
+    return n * n
 
 
 # =============================================================================
@@ -82,7 +83,10 @@ def diy_first_letter(word):
     >>> diy_first_letter("") is None
     True
     """
-    pass
+    try:
+        return word[0]
+    except:
+        return None
 
 
 # =============================================================================
@@ -111,7 +115,8 @@ def diy_is_weekend(day):
     >>> diy_is_weekend("Monday")
     False
     """
-    pass
+    if day in ["Saturday", "Sunday"]: return True
+    else: return False
 
 
 # =============================================================================
@@ -136,7 +141,7 @@ def diy_make_positive(n):
     >>> diy_make_positive(3)
     3
     """
-    pass
+    return abs(n)
 
 
 # =============================================================================
@@ -162,7 +167,8 @@ def diy_pass_fail(score):
     >>> diy_pass_fail(69)
     'fail'
     """
-    pass
+    if score >= 70: return "pass"
+    else: return "fail"
 
 
 # =============================================================================
@@ -192,7 +198,11 @@ def diy_coin_name(cents):
     >>> diy_coin_name(3) is None
     True
     """
-    pass
+    if cents == 1: return "penny"
+    elif cents == 5: return "nickel"
+    elif cents == 10: return "dime"
+    elif cents == 25: return "quarter"
+    else: return None
 
 
 # =============================================================================
@@ -221,7 +231,10 @@ def diy_letter_grade(score):
     >>> diy_letter_grade(42)
     'F'
     """
-    pass
+    if score >= 90: return "A"
+    elif 80 <= score <= 89: return "B"
+    elif 70 <= score <= 79: return "C"
+    elif 70 > score: return "F"
 
 
 # =============================================================================
@@ -252,7 +265,9 @@ def diy_count_true(a, b, c):
     2
     """
     count = 0
-    # your three if statements here
+    if a: count += 1
+    if b: count += 1
+    if c: count += 1
     return count
 
 
@@ -284,8 +299,14 @@ def diy_can_enter(has_ticket, age):
     >>> diy_can_enter(True, 10)
     'need adult'
     """
-    pass
-
+    if has_ticket == True:
+        if age >= 13:
+            return "welcome"
+        else:
+            return "need adult"
+    else:
+        return "no ticket"
+    
 
 # =============================================================================
 # 11. GENERATORS (yield)
@@ -312,7 +333,13 @@ def diy_evens_up_to(n):
     >>> list(diy_evens_up_to(6))
     [0, 2, 4, 6]
     """
-    pass
+    evens = []
+    for x in range(n):
+        if (x % 2) == 0:
+            evens.append(x)
+    evens.append(n)
+    return evens
+            
 
 
 # =============================================================================
